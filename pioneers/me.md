@@ -1,37 +1,33 @@
-# Pi Network API: ```/me```
-Access a Pioneer’s resource and retrieve the Pioneer’s information.
+# Pi Network API: /me
 
-### URL: GET ```https://api.minepi.com/v2/me```
-### Auth: [Access token](../authorization/AccessToken.md)
-### Returns: [UserDTO](../types/UserDTO.md)
+This endpoint provides verified Pioneer information associated with the provided Access Token.
 
-# Examples:
-## Python
+**URL:** GET https://api.minepi.com/v2/me
+
+**Authorization:** Access Token (Bearer Token) [See Access Token Documentation](../authorization/AccessToken.md)
+
+**Returns:** UserDTO object [See UserDTO Documentation](../types/UserDTO.md)
+
+**Purpose**
+
+* **Retrieve Pioneer UID:** Obtain the app-specific unique identifier for the authenticated Pioneer. 
+* **Get Pioneer Username:** Access the Pioneer's Pi Network username (if the `username` scope was granted during authentication).
+
+**Example Code (Python)**
+
 ```python
 import requests
 
-# Replace this with your own access token
-access_token = "accessToken_Obtained_from_App_Frontend"
-
-# Set the header with the access token
+access_token = "accessToken_Obtained_from_App_Frontend"  # Replace with your token
 header = {"Authorization": "Bearer " + access_token}
+response = requests.get("[https://api.minepi.com/v2/me](https://api.minepi.com/v2/me)", headers=header)
 
-# Send the GET request to the Pi API endpoint
-response = requests.get("https://api.minepi.com/v2/me", headers=header)
-
-# Check the status code and the response content
 if response.status_code == 200:
+    userDTO = response.json()
     print("Success!")
-    print(response.json())
+    print("Pioneer UID:", userDTO['uid'])
+    print("Pioneer Username:", userDTO['username'])  # If 'username' scope was granted
 else:
-    print("Error!")
-    print(response.text)
-```
-Response On Success:
-```
-Success!
-```
-Response On Error:
-```
-Error!
+    print("Error:", response.status_code)
+    print(response.text) 
 ```
