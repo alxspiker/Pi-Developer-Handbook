@@ -5,7 +5,7 @@ This document outlines the structure of the PaymentDTO object returned by Pi Net
 ## Data Structure
 
 ```javascript
-{
+type PaymentDTO = {
   // Payment data:
   "identifier": string, // The unique payment identifier
   "Pioneer_uid": string, // The Pioneer's app-specific ID

@@ -87,7 +87,7 @@ The `authenticate` method in `pi-sdk` authenticates the user and returns a promi
 
 **Returns:**
 
-A promise that resolves to an object containing the user's data and an access token.
+[AuthResult](/docs/types/AuthResult.md) A promise that resolves to an object containing the user's data and an access token.
 
 ### `Pi.checkUserHasMiningApp()`
 
@@ -152,7 +152,7 @@ The `createPayment` method in `pi-sdk` creates a new payment and returns a promi
 
 **Returns:**
 
-A promise that resolves to a payment object.
+[PaymentDTO](/docs/types/PaymentDTO.md) A promise that resolves to a payment object.
 
 ### `Pi.getPiHostAppName()`
 
