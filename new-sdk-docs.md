@@ -1,10 +1,10 @@
-**Pi Network SDK**
+# Pi Network SDK**
 
-**Introduction**
+## Introduction
 
 The Pi Network SDK is a JavaScript library that allows developers to integrate Pi Network features into their web applications. The SDK provides a set of methods that can be used to authenticate users, create payments, open share dialogs, and more.
 
-**Installation**
+## Installation
 
 To install the Pi Network SDK, add the following script tag to your HTML document:
 
@@ -12,7 +12,7 @@ To install the Pi Network SDK, add the following script tag to your HTML documen
 <script src="https://sdk.minepi.com/pi-sdk.js"></script>
 ```
 
-**Usage**
+## Usage
 
 Once the SDK is installed, you can initialize Pi:
 
@@ -32,20 +32,16 @@ if (error) {
 });
 ```
 
-The `authenticate` method takes two arguments:
+## Sandbox Environment (Development)
 
-* `scopes`: An array of scopes that the user is requesting access to.
-* `callback`: A callback function that will be called with the result of the authentication request.
-
-The `callback` function will be passed two arguments:
-
-* `error`: An error object, if there was an error authenticating the user.
-* `result`: The result of the authentication request, if there was no error.
-
-The `result` object will contain the following properties:
-
-* `user`: The authenticated user object.
-* `accessToken`: The access token that can be used to make API requests on behalf of the user.
+* **Purpose:** The sandbox allows you to test and develop your app in a simulated environment before deploying it to production.
+* **Configuration:** 
+    * Set the `sandbox: true` flag in your SDK initialization.
+    * Obtain your Sandbox URL from the Developer Portal.
+* **Sandbox Authorization:** Follow these steps:
+    1. Open the Pi App on your mobile device.
+    2. Navigate to Pi Utilities.
+    3. Click "Authorize Sandbox" and follow the instructions.
 
 ## Functions and Methods
 
