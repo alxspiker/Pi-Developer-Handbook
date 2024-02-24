@@ -42,3 +42,12 @@ Object{
 }
 ```
 The returned uid is static, and since it comes from the /me endpoint, it is the correct uid for the Pioneer and your App. Check out the next section for potential uses of the uid.
+
+## Using the uid within your App
+### Create Unique Database Records
+Using the verified uid which is obtained from the /me Pi Platform API endpoint, the app can create a unique record for each Pioneer within its DB. The uid is static and will not change; however, it is important to not use the uid that is returned by the Pi Platform SDK Authenticate function because it is not verified. Once the record is created using the uid, then it can be used to store any usage information such as purchases, progress within a game, etc.
+
+### No Pioneer Sign-In Required
+Everytime a Pioneer visits the app, the Pi Platform SDK Authenticate function will be called. This will return the Access Token, which needs to be verified. Once that token is verified the uid can be used to locate the Pioneer’s record within the app’s Database, which enables the app to personalize the Pioneer’s experience.
+
+For example, you have an app that offers videos that require purchase. Upon visiting the site within the Pi Browser, the Pioneer is first presented with a loading screen. Within a few seconds, when the app has received and verified the access token, then the homepage can load. Using the uid, the app now displays to the Pioneer all of the videos that they’ve purchased in the past. Included the uid is the username that can be displayed in a custom header on the app homepage so the Pioneer knows they are accessing their account. In addition, the app could use the Pioneer’s purchase history to recommend new videos. This is all done without the Pioneer signing in or remembering any passwords, making for a seamless user experience.
