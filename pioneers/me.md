@@ -2,7 +2,7 @@
 Access a Pioneer’s resource and retrieve the Pioneer’s information.
 
 ### URL: GET ```https://api.minepi.com/v2/me```
-### Auth: Access token
+### Auth: [Access token](../authorization/AccessToken.md)
 ### Returns: [UserDTO](../types/UserDTO.md)
 
 # Examples:
