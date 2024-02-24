@@ -28,3 +28,7 @@ const postingURL = `https://api.minepi.com/v2/payments/${ payment_id }`;
 const headers = { headers: { authorization: `key ${ APIKEY }` } };
 axios.get(postingURL, null, headers);
 ```
+
+## API Reference
+URL | Description | Auth | Response
+GET api.minepi.com/v2/me | Access a Pioneer’s resource and retrieve the Pioneer’s information. | Access token | UserDTO
