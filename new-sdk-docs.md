@@ -4,8 +4,8 @@
 * [Introduction](#Introduction)
 * [Installation](#Installation)
 * [Usage](#Usage)
-* [Sandbox Environment](#Sandbox+Environment)
-* [Functions and Methods](#Functions+and+Methods)
+* [Sandbox Environment](#Sandbox-Environment)
+* [Functions and Methods](#Functions-and-Methods)
 
 ## Introduction
 
