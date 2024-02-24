@@ -27,11 +27,11 @@ else:
     print("Error!")
     print(response.text)
 ```
-### Response On Success:
+Response On Success:
 ```
 Success!
 ```
-### Response On Error:
+Response On Error:
 ```
 Error!
 ```
