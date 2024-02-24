@@ -4,8 +4,8 @@ Comprehensive documentation and development resources for building robust applic
 
 ## Getting Started
 
-* **Pi Network API Documentation:** Explore API endpoints for managing pioneer data, payments, and more [Server API](server-api.md)
-* **Pi App Platform SDK Guide:** Learn to integrate Pi functionality directly into your app [Platform SDK](platform-sdk.md)
+* **Pi Network API Documentation:** Explore API endpoints for managing pioneer data, payments, and more [Server API](api-reference.md)
+* **Pi App Platform SDK Guide:** Learn to integrate Pi functionality directly into your app [Platform SDK](sdk-reference.md)
 * **Development Checklist:**  Follow our checklist for a smooth development process [Checklist](checklist.md)
 
 ## How to Contribute
