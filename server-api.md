@@ -33,5 +33,7 @@ axios.get(postingURL, null, headers);
 Base Url: ```api.minepi.com/v2```
 URL | Description | Auth | Response
 --- | --- | --- | ---
-GET **/me** | Access a Pioneer’s resource and retrieve the Pioneer’s information. | Access token | UserDTO
+GET /me | Access a Pioneer’s resource and retrieve the Pioneer’s information. | Access token | UserDTO
+Payments | --- | --- | ---
 GET /payments/{payment_id} | The APIs for payments all have the base route /payments. It is important to not create payments using the Platform API. Use the client-side Javascript SDK for this purpose. | Server API Key | PaymentDTO
+POST /payments/{payment_id}/approve | This marks a payment as approved within the Pi Server, enabling the Pioneer to approve and submit the transaction to the blockchain. The paymentID is obtained as a argument of the callback function onReadyForServerApproval from the Pi App Platform SDK. | Server API Key | PaymentDTO
