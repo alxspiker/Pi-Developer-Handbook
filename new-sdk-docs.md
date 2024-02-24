@@ -1,11 +1,11 @@
 # Pi Network SDK
 
 **Table of Contents**
-* [Introduction](##Introduction)
-* [Installation](##Installation)
-* [Usage](##Usage)
-* [Sandbox Environment (Development)](##Sandbox Environment (Development))
-* [Functions and Methods](##Functions and Methods)
+* [Introduction](#Introduction)
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [Sandbox Environment](#Sandbox%20Environment)
+* [Functions and Methods](#Functions%20and%20Methods)
 
 ## Introduction
 
@@ -39,7 +39,8 @@ if (error) {
 });
 ```
 
-## Sandbox Environment (Development)
+## Sandbox Environment
+(Development)
 
 * **Purpose:** The sandbox allows you to test and develop your app in a simulated environment before deploying it to production.
 * **Configuration:** 
