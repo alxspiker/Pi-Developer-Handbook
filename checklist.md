@@ -1,8 +1,8 @@
 # Getting Started Checklists
 ### TABLE OF CONTENTS
-Registering for an Account and Initial Setup
-Launching on Pi Mainnet
-Special Considerations
+1. Registering for an Account and Initial Setup
+2. Launching on Pi Mainnet
+3. Special Considerations
 
 ## Registering for an Account and Initial Setup
 1. Download the Pi App
