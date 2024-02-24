@@ -6,7 +6,7 @@ Access a Pioneer’s resource and retrieve the Pioneer’s information.
 ### Returns: UserDTO
 
 # Examples:
-### Python
+## Python
 ```python
 import requests
 
@@ -26,4 +26,12 @@ if response.status_code == 200:
 else:
     print("Error!")
     print(response.text)
+```
+### Response On Success:
+```
+Error!
+```
+### Response On Error:
+```
+Error!
 ```
