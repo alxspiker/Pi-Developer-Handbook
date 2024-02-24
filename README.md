@@ -1,7 +1,7 @@
 # Pi Developer Handbook 
 
 This repository serves as the official resource for building robust applications on the Pi Network. Explore in-depth documentation, tutorials, and best practices to enhance your Pi development journey.
-[View The Wiki Here](github.com/alxspiker/Pi-Developer-Handbook/wiki)
+[View The Wiki Here](https://github.com/alxspiker/Pi-Developer-Handbook/wiki)
 
 **Key Features**
 
