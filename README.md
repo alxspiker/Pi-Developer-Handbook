@@ -1,10 +1,10 @@
-# Pi-Developer-Documentation
+# Pi-Developer
 
 Enhanced documentation and SDK development resources for building applications on the Pi Network.
 
 **How to Contribute**
 
-We welcome your contributions to improve and expand Pi-Developer-Documentation! Please follow these guidelines:
+We welcome your contributions to improve and expand Pi-Developer! Please follow these guidelines:
 
 * **Fork the repository:** Create your own copy of the project on GitHub.
 * **Create a branch:**  Make your changes in a separate branch (e.g., `feature-new-sdk-tooling` or `fix-api-docs-typo`).
