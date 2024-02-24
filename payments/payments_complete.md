@@ -3,7 +3,7 @@ This marks a payment as completed by proving to the Pi Servers that your app has
 
 Don’t forget that
 
-### URL: GET ```https://api.minepi.com/v2/payments/{payment_id}/complete```
+### URL: POST ```https://api.minepi.com/v2/payments/{payment_id}/complete```
 ### Auth: [Server API Key](../authorization/Key.md)
 ### Returns: [PaymentDTO](../types/PaymentDTO.md)
 

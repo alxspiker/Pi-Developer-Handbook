@@ -3,7 +3,7 @@ This marks a payment as cancelled.
 
 Don’t forget that
 
-### URL: GET ```https://api.minepi.com/v2/payments/{payment_id}/cancel```
+### URL: POST ```https://api.minepi.com/v2/payments/{payment_id}/cancel```
 ### Auth: [Server API Key](../authorization/Key.md)
 ### Returns: [PaymentDTO](../types/PaymentDTO.md)
 

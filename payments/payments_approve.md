@@ -1,7 +1,7 @@
 # Pi Network API: ```/payments/{payment_id}/approve```
 This marks a payment as approved within the Pi Server, enabling the Pioneer to approve and submit the transaction to the blockchain. The paymentID is obtained as a argument of the callback function onReadyForServerApproval from the Pi App Platform SDK.
 
-### URL: GET ```https://api.minepi.com/v2/payments/{payment_id}/approve```
+### URL: POST ```https://api.minepi.com/v2/payments/{payment_id}/approve```
 ### Auth: [Server API Key](../authorization/Key.md)
 ### Returns: [PaymentDTO](../types/PaymentDTO.md)
 

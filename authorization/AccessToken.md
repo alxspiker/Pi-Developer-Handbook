@@ -1,3 +1,16 @@
+### ACCESS TOKEN (BEARER TOKEN)
+These API calls require that you provide a Pioneer’s access token to obtain the resource. They are generally related with a Pioneer’s data (e.g: /me). The token is returned from the Pi.Authenticate function of the Pi App Platform SDK.
+
+Those endpoints can be accessed using the following Authorization header:
+
+```Authorization: Bearer <Pioneer's access token>```
+
+Example Code:
+```Python
+const headers = { headers: { authorization: "Bearer " + { PioneerAccessToken } }};
+axios.get("https://api.minepi.com/v2/me", headers);
+```
+
 # Access Token
 The access token is a long random string that uniquely identifies a Pioneer within an app. The Access Token is the identifier that Applications use to communicate with the Pi Servers about a Pioneer. The Access Token is designed to protect the Pioneer’s information from unapproved access. This page assumes that you’ve read the Pi SDK page and have an understanding of how the Pi SDK and the Authenticate function work.
 
