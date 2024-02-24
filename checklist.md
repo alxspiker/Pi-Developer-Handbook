@@ -6,6 +6,7 @@ Special Considerations
 
 ## Registering for an Account and Initial Setup
 1. Download the Pi App
+
    Google Play Store Link
    Apple App Store Link
 2. Register for an account
