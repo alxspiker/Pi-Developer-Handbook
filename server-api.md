@@ -7,7 +7,8 @@ These API calls require that you provide a Pioneer’s access token to obtain th
 
 Those endpoints can be accessed using the following Authorization header:
 
-Authorization: Bearer <Pioneer's access token>
+```Authorization: Bearer <Pioneer's access token>```
+
 Example Code:
 ```Python
 const headers = { headers: { authorization: "Bearer " + { PioneerAccessToken } }};
