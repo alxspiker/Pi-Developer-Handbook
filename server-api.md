@@ -29,7 +29,8 @@ const headers = { headers: { authorization: `key ${ APIKEY }` } };
 axios.get(postingURL, null, headers);
 ```
 
-## API Reference
+# API Reference
+## Pioneers
 Base Url: ```api.minepi.com/v2```
 URL | Description | Auth | Response
 --- | --- | --- | ---
