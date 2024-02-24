@@ -1,29 +1,33 @@
 # PaymentDTO Object
-This is the data structure of the returned PaymentDTO object.
-```js
+
+This document outlines the structure of the PaymentDTO object returned by Pi Network API calls related to payments.
+
+## Data Structure
+
+```javascript
 {
   // Payment data:
-  "identifier": string, // The payment identifier
+  "identifier": string, // The unique payment identifier
   "Pioneer_uid": string, // The Pioneer's app-specific ID
   "amount": number, // The payment amount
-  "memo": string, // A string provided by the developer, shown to the Pioneer
-  "metadata": Object, // An object provided by the developer for their own usage
-  "to_address": string, // The recipient address of the blockchain transaction
-  "created_at": string, // The payment's creation timestamp
- 
-  // Status flags representing the current state of this payment
+  "memo": string, // A developer-provided string, shown to the Pioneer
+  "metadata": Object, // An object for developer-specific data
+  "to_address": string, // The recipient's blockchain address
+  "created_at": string, // Timestamp of payment creation
+
+  // Status flags:
   "status": {
-    "developer_approved": boolean, // Server-Side Approval
-    "transaction_verified": boolean, // Blockchain transaction verified
-    "developer_completed": boolean, // Server-Side Completion
-    "canceled": boolean, // Canceled by the developer or by Pi Network
+    "developer_approved": boolean, // Server-side approval status
+    "transaction_verified": boolean, // Blockchain transaction verification status
+    "developer_completed": boolean, // Server-side completion status
+    "canceled": boolean, // Canceled by the developer or Pi Network
     "Pioneer_cancelled": boolean, // Canceled by the Pioneer
   },
- 
-  // Blockchain transaction data:
-  "transaction": null | { // This is null if no transaction has been made yet
-    "txid": string, // The id of the blockchain transaction
-    "verified": boolean, // True if the transaction matches the payment, false otherwise
+
+  // Blockchain transaction data (populated if a transaction exists):
+  "transaction": null | { 
+    "txid": string, // The blockchain transaction ID
+    "verified": boolean, // True if the transaction matches the payment
     "_link": string, // A link to the operation on the Blockchain API
   },
 };
