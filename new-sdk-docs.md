@@ -52,20 +52,20 @@ if (error) {
     3. Click "Authorize Sandbox" and follow the instructions.
 
 ## Functions and Methods
-[Pi.authenticate()](#piauthenticate)
-[Pi.checkUserHasMiningApp()](#picheckuserhasminingapp)
-[Pi.checkUserHasPiBrowser()](#picheckuserhaspibrowser)
-[Pi.copyText()](#picopytext)
-[Pi.createPayment()](#picreatepayment)
-[Pi.getPiHostAppName()](#pigetpihostappname)
-[Pi.getPiHostAppInfo()](#pigetpihostappinfo)
-[Pi.init()](#piinit)
-[Pi.nativeFeaturesList()](#pinativefeatureslist)
-[Pi.openConversation()](#piopenconversation)
-[Pi.openShareDialog()](#piopensharedialog)
-[Pi.openUrlInSystemBrowser()](#piopenurlinsystembrowser)
-[Pi.requestPermission()](#pirequestpermission)
-[Pi.scanQrCode()](#piscanqrcode)
+* [Pi.authenticate()](#piauthenticate)
+* [Pi.checkUserHasMiningApp()](#picheckuserhasminingapp)
+* [Pi.checkUserHasPiBrowser()](#picheckuserhaspibrowser)
+* [Pi.copyText()](#picopytext)
+* [Pi.createPayment()](#picreatepayment)
+* [Pi.getPiHostAppName()](#pigetpihostappname)
+* [Pi.getPiHostAppInfo()](#pigetpihostappinfo)
+* [Pi.init()](#piinit)
+* [Pi.nativeFeaturesList()](#pinativefeatureslist)
+* [Pi.openConversation()](#piopenconversation)
+* [Pi.openShareDialog()](#piopensharedialog)
+* [Pi.openUrlInSystemBrowser()](#piopenurlinsystembrowser)
+* [Pi.requestPermission()](#pirequestpermission)
+* [Pi.scanQrCode()](#piscanqrcode)
 
 ### `Pi.authenticate()`
 
