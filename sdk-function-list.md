@@ -1,8 +1,0 @@
-Authentication: Pi.authenticate()
-App Presence: Pi.checkUserHasMiningApp(), Pi.checkUserHasPiBrowser()
-Clipboard: Pi.copyText()
-Payments: Pi.createPayment()
-App Info: Pi.getPiHostAppName(), Pi.getPiHostAppInfo()
-Initialization: Pi.init()
-Features: Pi.nativeFeaturesList()
-User Actions: Pi.openConversation(), Pi.openShareDialog(), Pi.openUrlInSystemBrowser(), Pi.requestPermission(), Pi.scanQrCode()
