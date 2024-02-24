@@ -1,21 +1,23 @@
-# Pi-Developer
+# Pi-Developer Documentation
 
-Enhanced documentation and SDK development resources for building applications on the Pi Network.
+Comprehensive documentation and development resources for building robust applications on the Pi Network. Enhance your understanding of Pi's APIs, SDK, and best practices to create seamless user experiences.
 
-**How to Contribute**
+## Getting Started
 
-We welcome your contributions to improve and expand Pi-Developer! Please follow these guidelines:
+* **Pi Network API Documentation:** Explore API endpoints for managing pioneer data, payments, and more [Server API](server-api.md)
+* **Pi App Platform SDK Guide:** Learn to integrate Pi functionality directly into your app [Platform SDK](platform-sdk.md)
+* **Development Checklist:**  Follow our checklist for a smooth development process [Checklist](checklist.md)
 
-* **Fork the repository:** Create your own copy of the project on GitHub.
-* **Create a branch:**  Make your changes in a separate branch (e.g., `feature-new-sdk-tooling` or `fix-api-docs-typo`).
-* **Commit and push:** Commit your changes with descriptive messages and push your branch to your fork.
-* **Open a pull request:** Submit a pull request back to the main repository, providing a clear explanation of your changes.
-* **Follow the checklist:** Ensure your changes align with the guidelines in [Checklist](checklist.md).
+## How to Contribute
 
-**We appreciate your help in making Pi-Developer-Documentation a valuable resource for the community!**
+We welcome your help in improving this project!
 
-## Contents
+1. Fork the repository.
+2. Create a descriptive branch for your changes.
+3. Adhere to the guidelines in our checklist.
+4. Submit a clear and concise pull request.
 
-* **[Checklist](checklist.md):** Essential steps to guide your Pi app development process.
-* **[Server API](server-api.md):** Documentation for interacting with the Pi Network API for pioneer, payments, and wallet data.
-* **[Platform SDK](platform-sdk.md):** Tools and resources for integrating Pi Network functionality directly into your app.
+## [Optional: Example Projects] 
+## [Optional: Community Forum] 
+
+Let's build great Pi Network applications together! 
