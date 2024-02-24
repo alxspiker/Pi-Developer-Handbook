@@ -59,7 +59,11 @@ Special Considerations
 
 10. Run your development App in the sandbox
 
-   First, set sandbox flag to “true” within your FE app code. Copy URL from dev portal and paste in your desktop browser. Enter the provided code in the utilities page of your Pi Mining App, found in the hamburger menu on the top left. Your browser will now be in sandbox mode and connected to your pi account.
+   First, set sandbox flag to “true” within your FE app code. Copy URL from dev portal and paste in your desktop browser.
+   
+   Enter the provided code in the utilities page of your Pi Mining App, found in the hamburger menu on the top left.
+   
+   Your browser will now be in sandbox mode and connected to your pi account.
 
 11. Deploy your app in a production environment
 
@@ -96,7 +100,7 @@ Complete the steps above before proceeding
    API calls will fail if the API Key from a Testnet application is not updated
 
    This will cause Payment failures
-   
+
 5. Launch App and test Pi Mainnet functionality
 
 ## Special Considerations
