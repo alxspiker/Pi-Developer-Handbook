@@ -29,7 +29,7 @@ else:
 ```
 ### Response On Success:
 ```
-Error!
+Success!
 ```
 ### Response On Error:
 ```
