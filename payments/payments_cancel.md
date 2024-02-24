@@ -1,42 +1,34 @@
-# Pi Network API: ```/payments/{payment_id}/cancel```
-This marks a payment as cancelled.
+# Pi Network API: /payments/{payment_id}/cancel
 
-Don’t forget that
+This endpoint allows you to cancel a pending or approved Pi payment from your server.
 
-### URL: POST ```https://api.minepi.com/v2/payments/{payment_id}/cancel```
-### Auth: [Server API Key](../authorization/Key.md)
-### Returns: [PaymentDTO](../types/PaymentDTO.md)
+**URL:** POST https://api.minepi.com/v2/payments/{payment_id}/cancel
 
-# Examples:
-## Python
+**Authorization:** Server API Key (Key Authorization) [See Documentation](../authorization/Key.md)
+
+**Returns:** PaymentDTO object [See Documentation](../types/PaymentDTO.md)
+
+**Important Notes**
+
+* **Obtain `payment_id`:**  The `payment_id` is provided within the `onReadyForServerApproval` callback of the Pi App Platform SDK or when managing existing payments.
+* **Reasons for Cancelling:** Consider the scenarios where you might need to cancel a payment from the server-side (e.g., inventory changes, Pioneer-initiated cancellation).
+
+**Example Code (Python)**
+
 ```python
 import requests
 
-# Replace this with your own access token
-api_key = "api_key_Obtained_from_App_Frontend"
+api_key = "your_server_api_key" 
+header = {"Authorization": "Key " + api_key}
 
-# Set the header with the access token
-header = {"Authorization": "key " + api_key}
+def cancel_payment(payment_id):
+    response = requests.post(f"[invalid URL removed]", headers=header)
 
-# Get paymentid from onReadyForServerApproval event
-payment_id = "example_payment_id"
+    if response.status_code == 200:
+        print("Payment successfully cancelled!")
+    else:
+        print("Error cancelling payment:", response.status_code)
+        print(response.text) 
 
-# Send the GET request to the Pi API endpoint
-response = requests.get(f"https://api.minepi.com/v2/payments/{payment_id}/cancel", headers=header)
-
-# Check the status code and the response content
-if response.status_code == 200:
-    print("Success!")
-    print(response.json())
-else:
-    print("Error!")
-    print(response.text)
-```
-Response On Success:
-```
-Success!
-```
-Response On Error:
-```
-Error!
+# ... (Example usage within your application's logic)
 ```

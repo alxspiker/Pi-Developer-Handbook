@@ -1,42 +1,36 @@
-# Pi Network API: ```/payments/{payment_id}/complete```
-This marks a payment as completed by proving to the Pi Servers that your app has obtained the payment’s transaction ID (txID). This is the final step in a payment before the payment flow closes and the Pioneer returns to your app. The txID is obtained through the callback function onReadyForServerCompletion of the Pi App Platform SDK. Passing that txID to your server side and using it to call this endpoint will complete a payment.
+# Pi Network API: /payments/{payment_id}/complete
 
-Don’t forget that
+This endpoint finalizes a Pi payment on the server side by providing the blockchain transaction ID (txID). This marks the payment process as fully completed.
 
-### URL: POST ```https://api.minepi.com/v2/payments/{payment_id}/complete```
-### Auth: [Server API Key](../authorization/Key.md)
-### Returns: [PaymentDTO](../types/PaymentDTO.md)
+**URL:** POST https://api.minepi.com/v2/payments/{payment_id}/complete
 
-# Examples:
-## Python
+**Authorization:** Server API Key (Key Authorization) [See Documentation](../authorization/Key.md)
+
+**Returns:** PaymentDTO object [See Documentation](../types/PaymentDTO.md)
+
+**Workflow**
+
+1. **Obtain `txID`:** The `txID` is provided within the `onReadyForServerCompletion` callback function of the Pi App Platform SDK.
+2. **Send to Server:** Pass the `txID` from the frontend to your application's backend.
+3. **Call Endpoint:**  Use this endpoint, providing the `payment_id` and `txID` to signal completion to the Pi Network servers. 
+
+**Example Code (Python)**
+
 ```python
 import requests
 
-# Replace this with your own access token
-api_key = "api_key_Obtained_from_App_Frontend"
+api_key = "your_server_api_key" 
+header = {"Authorization": "Key " + api_key}
 
-# Set the header with the access token
-header = {"Authorization": "key " + api_key}
+def complete_payment(payment_id, txid):
+    data = {'txid': txid} 
+    response = requests.post(f"[invalid URL removed]", headers=header, json=data) 
 
-# Get paymentid from onReadyForServerApproval event
-payment_id = "example_payment_id"
+    if response.status_code == 200:
+        print("Payment successfully completed!")
+    else:
+        print("Error completing payment:", response.status_code)
+        print(response.text) 
 
-# Send the GET request to the Pi API endpoint
-response = requests.get(f"https://api.minepi.com/v2/payments/{payment_id}/complete", headers=header)
-
-# Check the status code and the response content
-if response.status_code == 200:
-    print("Success!")
-    print(response.json())
-else:
-    print("Error!")
-    print(response.text)
-```
-Response On Success:
-```
-Success!
-```
-Response On Error:
-```
-Error!
+# ... (Inside your code handling the 'onReadyForServerCompletion' callback) 
 ```

@@ -1,39 +1,34 @@
-# Pi Network API: ```/payments/incomplete_server_payments```
-This marks a payment as completed by proving to the Pi Servers that your app has obtained the payment’s transaction ID (txID). This is the final step in a payment before the payment flow closes and the Pioneer returns to your app. The txID is obtained through the callback function onReadyForServerCompletion of the Pi App Platform SDK. Passing that txID to your server side and using it to call this endpoint will complete a payment.
+# Pi Network API: /payments/incomplete_server_payments
 
-Don’t forget that
+This endpoint retrieves a list of payments that are awaiting server-side completion (i.e., awaiting the `txID` to be provided).
 
-### URL: GET ```https://api.minepi.com/v2/payments/incomplete_server_payments```
-### Auth: [Server API Key](../authorization/Key.md)
-### Returns: [PaymentDTO](../types/PaymentDTO.md)
+**URL:** GET https://api.minepi.com/v2/payments/incomplete_server_payments
 
-# Examples:
-## Python
+**Authorization:** Server API Key (Key Authorization) [See Documentation](../authorization/Key.md)
+
+**Returns:** An array of PaymentDTO objects [See Documentation](../types/PaymentDTO.md)
+
+**Typical Use Cases**
+
+* **Retrieving Pending Payments:** Fetch payments that require finalization from your server.
+* **Error Recovery:** If your application experiences an error or interruption, you can use this endpoint to resume the completion process for pending payments.
+
+**Example Code (Python)**
+
 ```python
 import requests
 
-# Replace this with your own access token
-api_key = "api_key_Obtained_from_App_Frontend"
+api_key = "your_server_api_key" 
+header = {"Authorization": "Key " + api_key}
 
-# Set the header with the access token
-header = {"Authorization": "key " + api_key}
+response = requests.post("[https://api.minepi.com/v2/payments/incomplete_server_payments](https://api.minepi.com/v2/payments/incomplete_server_payments)", headers=header) 
 
-# Send the GET request to the Pi API endpoint
-response = requests.get(f"https://api.minepi.com/v2/payments/incomplete_server_payments", headers=header)
-
-# Check the status code and the response content
 if response.status_code == 200:
-    print("Success!")
-    print(response.json())
+    incomplete_payments = response.json()
+    for payment in incomplete_payments:
+        # Assuming you have the txID for each payment
+        complete_payment(payment['identifier'], payment_txid)  # Using your 'complete_payment' function
 else:
-    print("Error!")
-    print(response.text)
-```
-Response On Success:
-```
-Success!
-```
-Response On Error:
-```
-Error!
+    print("Error fetching incomplete payments:", response.status_code)
+    print(response.text) 
 ```

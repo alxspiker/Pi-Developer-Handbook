@@ -1,40 +1,36 @@
-# Pi Network API: ```/payments/{payment_id}/approve```
-This marks a payment as approved within the Pi Server, enabling the Pioneer to approve and submit the transaction to the blockchain. The paymentID is obtained as a argument of the callback function onReadyForServerApproval from the Pi App Platform SDK.
+# Pi Network API: /payments/{payment_id}/approve
 
-### URL: POST ```https://api.minepi.com/v2/payments/{payment_id}/approve```
-### Auth: [Server API Key](../authorization/Key.md)
-### Returns: [PaymentDTO](../types/PaymentDTO.md)
+This endpoint enables server-side approval of a pending Pi payment, a required step before the Pioneer can finalize the transaction on the blockchain.
 
-# Examples:
-## Python
+**URL:** POST https://api.minepi.com/v2/payments/{payment_id}/approve
+
+**Authorization:** Server API Key (Key Authorization) [See Documentation](../authorization/Key.md)
+
+**Returns:** PaymentDTO object [See Documentation](../types/PaymentDTO.md)
+
+**Important Notes**
+
+* **Obtain `payment_id`:**  The `payment_id` is provided as an argument within the `onReadyForServerApproval` callback function of the Pi App Platform SDK.
+* **Asynchronous Process:** Approving a payment on the server side does not instantly complete the transaction. The Pioneer must still confirm it within the Pi Browser.
+
+**Example Code (Python)**
+
 ```python
 import requests
 
-# Replace this with your own access token
-api_key = "api_key_Obtained_from_App_Frontend"
+api_key = "your_server_api_key" 
+header = {"Authorization": "Key " + api_key}
 
-# Set the header with the access token
-header = {"Authorization": "key " + api_key}
+def handle_payment_approval(payment_id):  
+    response = requests.post(f"[https://api.minepi.com/v2/payments/](https://api.minepi.com/v2/payments/){payment_id}/approve", headers=header)
 
-# Get paymentid from onReadyForServerApproval event
-payment_id = "example_payment_id"
+    if response.status_code == 200:
+        print("Payment approved on server!")
+        # Potentially update your application's UI or database
+    else:
+        print("Error approving payment:", response.status_code)
+        print(response.text) 
 
-# Send the GET request to the Pi API endpoint
-response = requests.get(f"https://api.minepi.com/v2/payments/{payment_id}/approve", headers=header)
-
-# Check the status code and the response content
-if response.status_code == 200:
-    print("Success!")
-    print(response.json())
-else:
-    print("Error!")
-    print(response.text)
-```
-Response On Success:
-```
-Success!
-```
-Response On Error:
-```
-Error!
+# ... (Inside your code handling the 'onReadyForServerApproval' callback) 
+handle_payment_approval(payment_id) 
 ```
