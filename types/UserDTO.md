@@ -1,3 +1,5 @@
+# UserDTO Object
+This is the data structure of the returned UserDTO object.
 ```js
 {
   "uid": string, // An app-specific Pioneer identifier
