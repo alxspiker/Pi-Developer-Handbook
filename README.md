@@ -17,8 +17,8 @@ We welcome your help in improving this project!
 3. Adhere to the guidelines in our checklist.
 4. Submit a clear and concise pull request.
 
-## [Example Projects]
-**Coming Soon** - Add your own project here!
+## [Example Projects](examples)
+* [Basic Login and Pay](examples/basic-login-and-pay/)
 ## [Community Forum] 
 **Coming Soon**
 
