@@ -1,5 +1,12 @@
 # Pi Network SDK
 
+**Table of Contents**
+* [Introduction](##Introduction)
+* [Installation](##Installation)
+* [Usage](##Usage)
+* [Sandbox Environment (Development)](##Sandbox Environment (Development))
+* [Functions and Methods](##Functions and Methods)
+
 ## Introduction
 
 The Pi Network SDK is a JavaScript library that allows developers to integrate Pi Network features into their web applications. The SDK provides a set of methods that can be used to authenticate users, create payments, open share dialogs, and more.
