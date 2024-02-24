@@ -2,29 +2,29 @@
 
 API calls requiring Pioneer-specific data use Access Tokens obtained via the Pi App Platform SDK's `Pi.Authenticate` function. Include the token in the Authorization header:
 
-    ```
-    Authorization: Bearer <Pioneer's access token>
-    ```
+```
+Authorization: Bearer <Pioneer's access token>
+```
 
 **Example Code (Python):**
 
-    ```python
-    const headers = { headers: { authorization: "Bearer " + { PioneerAccessToken } }};
-    axios.get("[https://api.minepi.com/v2/me](https://api.minepi.com/v2/me)", headers);
-    ```
+```python
+const headers = { headers: { authorization: "Bearer " + { PioneerAccessToken } }};
+axios.get("[https://api.minepi.com/v2/me](https://api.minepi.com/v2/me)", headers);
+```
 
 ## Obtaining an Access Token
 
 The `Pi.Authenticate` function of the Pi SDK provides an `AuthResults` object:
 
-    ```js
-    AuthResults{
-      accessToken: string,
-      user: {
-        uid: string 
-      }
+```js
+AuthResults{
+    accessToken: string,
+    user: {
+    uid: string 
     }
-    ```
+}
+```
 
 **Security Note:** Use the `accessToken` from the frontend  *only* for verification with the `/me` API endpoint. Do not store it long-term for identifying the Pioneer, as it is dynamic.
 
