@@ -19,6 +19,7 @@ We welcome your help in improving this project!
 
 ## [Example Projects](examples)
 * [Basic Login and Pay](examples/basic-login-and-pay/)
+* [python-login-pay-subscriptions](examples/python-login-pay-subscriptions/)
 ## [Community Forum] 
 **Coming Soon**
 
