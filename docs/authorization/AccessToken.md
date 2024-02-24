@@ -10,7 +10,7 @@ Authorization: Bearer <Pioneer's access token>
 
 ```python
 const headers = { headers: { authorization: "Bearer " + { PioneerAccessToken } }};
-axios.get("[https://api.minepi.com/v2/me](https://api.minepi.com/v2/me)", headers);
+axios.get("https://api.minepi.com/v2/me", headers);
 ```
 
 ## Obtaining an Access Token
@@ -41,7 +41,7 @@ AuthResults{
     ```python
     const PioneerAccessToken = accessToken_Obtained_from_App_Frontend;
     const header = { headers: { authorization: "Bearer " + PioneerAccessToken }};
-    axios.get("[https://api.minepi.com/v2/me](https://api.minepi.com/v2/me)", header);
+    axios.get("https://api.minepi.com/v2/me", header);
     ```
 
 3. **Handle Response:**

@@ -36,7 +36,7 @@ Call the `Pi.init()` function, specifying the current SDK version:
 ## Authentication
 
 * **`Pi.authenticate()`:**  Requests Pioneer data. It uses "scopes" to specify the type of information you need.
-* **Security:** Always verify the `accessToken` and `uid` on your server-side using the `/me` API endpoint [API Docs](pioneers/me.md).
+* **Security:** Always verify the `accessToken` and `uid` on your server-side using the `/me` API endpoint [API Docs](docs/pioneers/me.md).
 
 **Example: Requesting Username**
 
@@ -60,8 +60,8 @@ Pi.authenticate(scopes, onIncompletePaymentFound)
 
 * **Overview:** Pi payments follow a 3-step process:
     1. **Create Payment (Client-Side):**  Use `Pi.createPayment()`.
-    2. **Approve Payment (Server-Side):**  Handle the `onReadyForServerApproval` callback and use [ /payments/{payment_id}/approve API](payments/payments_approve.md).
-    3. **Complete Payment (Server-Side):** Handle the `onReadyForServerCompletion` callback and use [/payments/{payment_id}/complete API](payments/payments_complete.md).
+    2. **Approve Payment (Server-Side):**  Handle the `onReadyForServerApproval` callback and use [ /payments/{payment_id}/approve API](docs/payments/payments_approve.md).
+    3. **Complete Payment (Server-Side):** Handle the `onReadyForServerCompletion` callback and use [/payments/{payment_id}/complete API](docs/payments/payments_complete.md).
 
 **Example: Creating a Payment**
 
