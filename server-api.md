@@ -9,7 +9,7 @@ Those endpoints can be accessed using the following Authorization header:
 
 Authorization: Bearer <Pioneer's access token>
 Example Code:
-'''Python
+```Python
 const headers = { headers: { authorization: "Bearer " + { PioneerAccessToken } }};
 axios.get("https://api.minepi.com/v2/me", headers);
-'''
+```
