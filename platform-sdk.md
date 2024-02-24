@@ -9,7 +9,7 @@ The Pi App Platform SDK enables developers to interact with the Pi Network serve
 Add the following script tag within your app's main HTML file:
 
 ```html
-<script src="[https://sdk.minepi.com/pi-sdk.js](https://sdk.minepi.com/pi-sdk.js)"></script>
+<script src="https://sdk.minepi.com/pi-sdk.js"></script>
 ```
 
 **2. Initialize the SDK**
