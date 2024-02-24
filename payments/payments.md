@@ -3,7 +3,7 @@ The APIs for payments all have the base route ```/payments```. It is important t
 
 ### URL: GET ```https://api.minepi.com/v2/payments```
 ### Auth: [Server API Key](../authorization/Key.md)
-### Returns: [UserDTO](../types/PaymentDTO.md)
+### Returns: [PaymentDTO](../types/PaymentDTO.md)
 
 # Examples:
 ## Python
