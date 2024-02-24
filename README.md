@@ -19,6 +19,6 @@ The Wiki provides a structured environment to organize and present code snippets
 
 **Contributing**
 
-We welcome contributions to improve and expand this resource! If you have valuable documentation, code examples, or insights to share, please refer to our CONTRIBUTING.md file for guidelines.
+We welcome contributions to improve and expand this resource! If you have valuable documentation, code examples, or insights to share, please refer to our [Contributing.md](Contributing.md) file for guidelines.
 
 **Let's build amazing Pi Network applications together!**
