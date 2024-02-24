@@ -34,3 +34,4 @@ axios.get(postingURL, null, headers);
 URL | Description | Auth | Response
 --- | --- | --- | ---
 GET api.minepi.com/v2/me | Access a Pioneer’s resource and retrieve the Pioneer’s information. | Access token | UserDTO
+GET api.minepi.com/v2/payments/{payment_id} | The APIs for payments all have the base route /payments. It is important to not create payments using the Platform API. Use the client-side Javascript SDK for this purpose. | Server API Key | PaymentDTO
