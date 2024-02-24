@@ -1,11 +1,21 @@
 # Pi-Developer-Documentation
-I plan to enhance and build upon the current Pi Network documentation and possibly build some new SDKs.
 
-## [Checklist](checklist.md)
-A great place to start to ensure all the steps are done correctly in order to get your app to production.
+Enhanced documentation and SDK development resources for building applications on the Pi Network.
 
-## [Server API](server-api.md)
-Documentation to access the Pi Network using the API to access pioneer, payments, and wallet information from your server.
+**How to Contribute**
 
-## [Platform SDK](platform-sdk.md)
-The SDK is a developer’s method to interact with and obtain information from the Pi Servers in your app. Developers can request information such as a Pioneer’s username or create a payment within Pi Browser.
+We welcome your contributions to improve and expand Pi-Developer-Documentation! Please follow these guidelines:
+
+* **Fork the repository:** Create your own copy of the project on GitHub.
+* **Create a branch:**  Make your changes in a separate branch (e.g., `feature-new-sdk-tooling` or `fix-api-docs-typo`).
+* **Commit and push:** Commit your changes with descriptive messages and push your branch to your fork.
+* **Open a pull request:** Submit a pull request back to the main repository, providing a clear explanation of your changes.
+* **Follow the checklist:** Ensure your changes align with the guidelines in [Checklist](checklist.md).
+
+**We appreciate your help in making Pi-Developer-Documentation a valuable resource for the community!**
+
+## Contents
+
+* **[Checklist](checklist.md):** Essential steps to guide your Pi app development process.
+* **[Server API](server-api.md):** Documentation for interacting with the Pi Network API for pioneer, payments, and wallet data.
+* **[Platform SDK](platform-sdk.md):** Tools and resources for integrating Pi Network functionality directly into your app.
