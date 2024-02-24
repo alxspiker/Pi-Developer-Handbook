@@ -1,4 +1,4 @@
-# Pi Network SDK**
+# Pi Network SDK
 
 ## Introduction
 
