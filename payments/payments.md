@@ -1,37 +1,30 @@
-# Pi Network API: ```/payments```
-The APIs for payments all have the base route ```/payments```. It is important to not create payments using the Platform API. Use the client-side SDK for this purpose.
+# Pi Network API: /payments
 
-### URL: GET ```https://api.minepi.com/v2/payments```
-### Auth: [Server API Key](../authorization/Key.md)
-### Returns: [PaymentDTO](../types/PaymentDTO.md)
+These endpoints provide information and allow management of payments within your app.  **Important:** Use the client-side Pi SDK to initiate new payments. 
 
-# Examples:
-## Python
+**Base URL:** https://api.minepi.com/v2/payments 
+
+**Authorization:** Server API Key (Key Authorization) [See Documentation](../authorization/Key.md)
+
+**Returns:**  PaymentDTO object [See Documentation](../types/PaymentDTO.md)
+
+**Important Note:** It sounds like there might be additional endpoints nested under `/payments` for actions like approving or canceling. If so, please provide those specifics so we can create documentation tailored to them.  
+
+**Example Code (Python: Getting Payments)** 
+
 ```python
 import requests
 
-# Replace this with your own access token
-api_key = "api_key_Obtained_from_App_Frontend"
+api_key = "your_server_api_key"  # Replace with your key
+header = {"Authorization": "Key " + api_key}
+response = requests.get("[https://api.minepi.com/v2/payments](https://api.minepi.com/v2/payments)", headers=header)
 
-# Set the header with the access token
-header = {"Authorization": "key " + api_key}
-
-# Send the GET request to the Pi API endpoint
-response = requests.get("https://api.minepi.com/v2/payments", headers=header)
-
-# Check the status code and the response content
 if response.status_code == 200:
-    print("Success!")
-    print(response.json())
+    payments = response.json()  # Assuming an array of PaymentDTOs
+    print("Success! Retrieved Payments:")
+    for payment in payments:
+        print(payment['identifier'], payment['status']) 
 else:
-    print("Error!")
-    print(response.text)
-```
-Response On Success:
-```
-Success!
-```
-Response On Error:
-```
-Error!
+    print("Error:", response.status_code)
+    print(response.text) 
 ```
