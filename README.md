@@ -22,3 +22,34 @@ The Wiki provides a structured environment to organize and present code snippets
 We welcome contributions to improve and expand this resource! If you have valuable documentation, code examples, or insights to share, please refer to our [Contributing.md](Contributing.md) file for guidelines.
 
 **Let's build amazing Pi Network applications together!**
+
+# Wiki Index:
+**NAVIGATION**
+
+* [**Getting Started**](../wiki)
+* [**Community Support**](Community-Support)
+
+**REFERENCES**
+
+* [**Authorization**](Authorization)
+* [**API**](API-Reference)
+* [**SDK**](SDK-Reference)
+* [**Data Types**](Types)
+
+**TOPICS**
+
+* [**What is PiNet?**](What-is-PiNet%3F)
+* [**What is PiWallet?**](What-is-PiWallet%3F)
+* [**Mainnet vs. Testnet**](Mainnet-VS-Testnet)
+* [**Chat Room for your App**](Chat-Room-for-Apps)
+* [**Payments Overview and Workflow**](Payments-Overview-and-Workflow)
+
+**Terms**
+
+* [Developer](https://socialchain.app/developer_terms)
+* [Social Chain](https://socialchain.app/tos)
+
+**White Paper**
+
+* [Original](https://minepi.com/white-paper/)
+* [Updated](https://pinetwork-official.medium.com/pi-whitepaper-chapters-mainnet-token-model-mining-and-roadmap-19f4a6774e71)
