@@ -26,23 +26,23 @@ We welcome contributions to improve and expand this resource! If you have valuab
 # Wiki Index:
 **NAVIGATION**
 
-* [**Getting Started**](../wiki)
-* [**Community Support**](Community-Support)
+* [**Getting Started**](../../wiki)
+* [**Community Support**](../../wiki/Community-Support)
 
 **REFERENCES**
 
-* [**Authorization**](Authorization)
-* [**API**](API-Reference)
-* [**SDK**](SDK-Reference)
-* [**Data Types**](Types)
+* [**Authorization**](../../wiki/Authorization)
+* [**API**](../../wiki/API-Reference)
+* [**SDK**](../../wiki/SDK-Reference)
+* [**Data Types**](../../wiki/Types)
 
 **TOPICS**
 
-* [**What is PiNet?**](What-is-PiNet%3F)
-* [**What is PiWallet?**](What-is-PiWallet%3F)
-* [**Mainnet vs. Testnet**](Mainnet-VS-Testnet)
-* [**Chat Room for your App**](Chat-Room-for-Apps)
-* [**Payments Overview and Workflow**](Payments-Overview-and-Workflow)
+* [**What is PiNet?**](../../wiki/What-is-PiNet%3F)
+* [**What is PiWallet?**](../../wiki/What-is-PiWallet%3F)
+* [**Mainnet vs. Testnet**](../../wiki/Mainnet-VS-Testnet)
+* [**Chat Room for your App**](../../wiki/Chat-Room-for-Apps)
+* [**Payments Overview and Workflow**](../../wiki/Payments-Overview-and-Workflow)
 
 **Terms**
 
