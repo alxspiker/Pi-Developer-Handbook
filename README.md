@@ -1,6 +1,7 @@
 <div align="center">
 
 # 🥧 Pi Developer Handbook
+Massive overhaul to this project!
 
 **The Complete Resource for Building Pi Network Applications**
 
