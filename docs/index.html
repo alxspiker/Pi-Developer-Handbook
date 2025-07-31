@@ -32,24 +32,24 @@
 </head>
 <body>
     <!-- Hero Section -->
-    <header class="hero">
+    <header class="hero" role="banner">
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">🥧 Pi Developer Handbook</h1>
                 <p class="hero-subtitle">Massive overhaul to this project!</p>
                 <p class="hero-description">The Complete Resource for Building Pi Network Applications</p>
                 
-                <div class="badges">
-                    <a href="https://minepi.com" class="badge pi-network" target="_blank" rel="noopener">
+                <div class="badges" role="list" aria-label="Resource badges">
+                    <a href="https://minepi.com" class="badge pi-network" target="_blank" rel="noopener" aria-label="Visit Pi Network official website">
                         <span>Pi Network</span>
                     </a>
-                    <a href="https://github.com/alxspiker/Pi-Developer-Handbook/wiki" class="badge documentation" target="_blank" rel="noopener">
+                    <a href="https://github.com/alxspiker/Pi-Developer-Handbook/wiki" class="badge documentation" target="_blank" rel="noopener" aria-label="View comprehensive documentation">
                         <span>📖 Documentation</span>
                     </a>
-                    <a href="https://github.com/alxspiker/Pi-Network-Developer-Docs/tree/main/examples" class="badge examples" target="_blank" rel="noopener">
+                    <a href="https://github.com/alxspiker/Pi-Network-Developer-Docs/tree/main/examples" class="badge examples" target="_blank" rel="noopener" aria-label="Browse code examples">
                         <span>💻 Examples</span>
                     </a>
-                    <a href="https://github.com/alxspiker/Pi-Developer-Handbook/wiki/Pi-Browser-Detection" class="badge hybrid-apps" target="_blank" rel="noopener">
+                    <a href="https://github.com/alxspiker/Pi-Developer-Handbook/wiki/Pi-Browser-Detection" class="badge hybrid-apps" target="_blank" rel="noopener" aria-label="Learn about hybrid applications">
                         <span>🔄 Hybrid Apps</span>
                     </a>
                 </div>
@@ -69,16 +69,17 @@
         </div>
     </header>
 
+    <main role="main">
     <!-- Wiki Redirect Notice -->
-    <section class="wiki-notice">
+    <section class="wiki-notice" aria-labelledby="wiki-notice-heading">
         <div class="container">
             <div class="notice-content">
-                <div class="notice-icon">📚</div>
+                <div class="notice-icon" aria-hidden="true">📚</div>
                 <div class="notice-text">
-                    <h3>Complete Documentation Available</h3>
+                    <h2 id="wiki-notice-heading">Complete Documentation Available</h2>
                     <p>This page provides an overview. For detailed guides, tutorials, and comprehensive documentation, visit our wiki.</p>
                 </div>
-                <a href="https://github.com/alxspiker/Pi-Developer-Handbook/wiki" class="btn btn-wiki" target="_blank" rel="noopener">
+                <a href="https://github.com/alxspiker/Pi-Developer-Handbook/wiki" class="btn btn-wiki" target="_blank" rel="noopener" aria-label="Go to comprehensive documentation wiki">
                     Go to Wiki →
                 </a>
             </div>
@@ -93,37 +94,38 @@
                 <p><strong>Revolutionary Update!</strong> This handbook now includes comprehensive support for <strong>hybrid applications</strong> that provide seamless experiences across both regular browsers and Pi Browser:</p>
             </div>
             
+            <h3>Key Features</h3>
             <div class="features-grid">
                 <div class="feature">
-                    <div class="feature-icon">✅</div>
+                    <div class="feature-icon" aria-hidden="true">✅</div>
                     <div class="feature-content">
                         <h4>Smart Pi Browser Detection</h4>
                         <p>Automatically detect user environment</p>
                     </div>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">✅</div>
+                    <div class="feature-icon" aria-hidden="true">✅</div>
                     <div class="feature-content">
                         <h4>Graceful Fallbacks</h4>
                         <p>Clean UI for non-Pi Browser users</p>
                     </div>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">✅</div>
+                    <div class="feature-icon" aria-hidden="true">✅</div>
                     <div class="feature-content">
                         <h4>No Scary Popups</h4>
                         <p>Better authentication flows</p>
                     </div>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">✅</div>
+                    <div class="feature-icon" aria-hidden="true">✅</div>
                     <div class="feature-content">
                         <h4>Broader Reach</h4>
                         <p>Support both Web2 and Web3 users</p>
                     </div>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">✅</div>
+                    <div class="feature-icon" aria-hidden="true">✅</div>
                     <div class="feature-content">
                         <h4>Future-Proof</h4>
                         <p>Ready for Pi Network mainstream adoption</p>
@@ -384,9 +386,10 @@ cd examples/
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">

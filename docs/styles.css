@@ -46,7 +46,7 @@ h4 {
 
 p {
     margin-bottom: 1rem;
-    color: #666;
+    color: #4a4a4a; /* Improved contrast ratio from #666 to #4a4a4a */
 }
 
 a {
@@ -349,7 +349,7 @@ section {
 
 .small-text {
     font-size: 0.9rem;
-    color: #888;
+    color: #5a5a5a; /* Improved contrast for accessibility */
 }
 
 /* Documentation Section */
