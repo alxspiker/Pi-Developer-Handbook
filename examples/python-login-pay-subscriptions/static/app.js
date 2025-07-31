@@ -3,6 +3,72 @@ Pi.init({ version: "2.0", sandbox: false })
 const scopes = ['payments','username', 'wallet_address'];
 var username = '';
 var user_id = '';
+var isInPiBrowser = null;
+
+// Pi Browser Detection Logic
+async function detectPiBrowser() {
+    const timeout = new Promise((resolve) =>
+        setTimeout(() => resolve("timeout"), 3000)
+    );
+
+    try {
+        if (window?.Pi?.getPiHostAppInfo) {
+            const result = await Promise.race([
+                window.Pi.getPiHostAppInfo(),
+                timeout,
+            ]);
+
+            if (result?.hostApp === "pi-browser") {
+                isInPiBrowser = true;
+                return true;
+            }
+        }
+    } catch (e) {
+        console.warn("❌ Pi SDK detection failed", e);
+    }
+
+    // Fallback: User-Agent or Referrer
+    const ua = navigator?.userAgent?.toLowerCase() || "";
+    const isLikely = ua.includes("pibrowser") || document.referrer.includes("minepi.com");
+    
+    isInPiBrowser = isLikely;
+    return isLikely;
+}
+
+async function initializeApp() {
+    const isPiBrowser = await detectPiBrowser();
+    
+    if (!isPiBrowser) {
+        $('.chat-log').append(`
+            <div class="ai-message" style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; margin: 10px 0; border-radius: 5px;">
+                <strong>⚠️ Pi Browser Required</strong><br>
+                This chat app requires Pi Browser to access Pi Network features.<br>
+                <a href="https://pinet.com/" target="_blank" style="color: #7B1FA2; text-decoration: underline;">
+                    Open in Pi Browser
+                </a>
+            </div>
+        `);
+        return;
+    }
+
+    // Show login prompt for Pi Browser users
+    $('.chat-log').append('<div class="ai-message">Welcome! Click the button below to login with Pi Network.</div>');
+    
+    // Create login button
+    const loginButton = $('<button style="background: #7B1FA2; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin: 10px 0;">Login with Pi</button>');
+    $('.chat-log').append(loginButton);
+    
+    loginButton.click(async function() {
+        try {
+            $(this).prop('disabled', true).text('Logging in...');
+            await login();
+            $(this).hide();
+        } catch (error) {
+            console.error('Login failed:', error);
+            $(this).prop('disabled', false).text('Retry Login');
+        }
+    });
+}
 
 async function login(){
     auth_result = await Pi.authenticate(scopes, onIncompletePaymentFound)
@@ -42,4 +108,5 @@ chatform.addEventListener('submit', (event) => {
     get_response();
 });
 
-login();
+// Initialize the app with browser detection
+initializeApp();
