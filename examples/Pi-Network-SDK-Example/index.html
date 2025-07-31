@@ -3,28 +3,100 @@
 <head>
   <title>Pi Network SDK Example</title>
   <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .warning { background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; border-radius: 5px; margin: 20px 0; }
+    .success { background: #d4edda; border: 1px solid #c3e6cb; padding: 15px; border-radius: 5px; margin: 20px 0; }
+    button { margin: 5px; padding: 10px 15px; }
+    .pi-only { display: none; }
+    #status { margin: 20px 0; padding: 10px; border-radius: 5px; }
+  </style>
 </head>
 <body>
   <h1>Pi Network SDK Example</h1>
-  <button onclick="authenticate()">Authenticate</button>
-  <button onclick="checkUserHasMiningApp()">Check if user has Mining App</button>
-  <button onclick="checkUserHasPiBrowser()">Check if user has Pi Browser</button>
-  <button onclick="copyText()">Copy text to clipboard</button>
-  <button onclick="createPayment()">Create payment</button>
-  <button onclick="getPiHostAppName()">Get Pi Host App Name</button>
-  <button onclick="getPiHostAppInfo()">Get Pi Host App Info</button>
-  <button onclick="nativeFeaturesList()">Get Native Features List</button>
-  <button onclick="openConversation()">Open conversation</button>
-  <button onclick="openShareDialog()">Open share dialog</button>
-  <button onclick="openUrlInSystemBrowser()">Open URL in system browser</button>
-  <button onclick="requestPermission()">Request permission</button>
-  <button onclick="scanQrCode()">Scan QR code</button>
+  <div id="status">Checking browser compatibility...</div>
+  
+  <div id="non-pi-warning" class="warning" style="display: none;">
+    <h3>⚠️ Pi Browser Required</h3>
+    <p>This SDK example requires Pi Browser to demonstrate Pi Network features.</p>
+    <a href="https://pinet.com/" target="_blank" style="color: #7B1FA2;">Open in Pi Browser</a>
+  </div>
+
+  <div id="pi-features" class="pi-only">
+    <button onclick="authenticate()">Authenticate</button>
+    <button onclick="checkUserHasMiningApp()">Check if user has Mining App</button>
+    <button onclick="checkUserHasPiBrowser()">Check if user has Pi Browser</button>
+    <button onclick="copyText()">Copy text to clipboard</button>
+    <button onclick="createPayment()">Create payment</button>
+    <button onclick="getPiHostAppName()">Get Pi Host App Name</button>
+    <button onclick="getPiHostAppInfo()">Get Pi Host App Info</button>
+    <button onclick="nativeFeaturesList()">Get Native Features List</button>
+    <button onclick="openConversation()">Open conversation</button>
+    <button onclick="openShareDialog()">Open share dialog</button>
+    <button onclick="openUrlInSystemBrowser()">Open URL in system browser</button>
+    <button onclick="requestPermission()">Request permission</button>
+    <button onclick="scanQrCode()">Scan QR code</button>
+  </div>
 
   <script>
     Pi.init({ version: "2.0", sandbox: false });
 
+    // Pi Browser Detection Logic
+    let isInPiBrowser = null;
+
+    async function detectPiBrowser() {
+      const timeout = new Promise((resolve) =>
+        setTimeout(() => resolve("timeout"), 3000)
+      );
+
+      try {
+        if (window?.Pi?.getPiHostAppInfo) {
+          const result = await Promise.race([
+            window.Pi.getPiHostAppInfo(),
+            timeout,
+          ]);
+
+          if (result?.hostApp === "pi-browser") {
+            isInPiBrowser = true;
+            return true;
+          }
+        }
+      } catch (e) {
+        console.warn("❌ Pi SDK detection failed", e);
+      }
+
+      // Fallback: User-Agent or Referrer
+      const ua = navigator?.userAgent?.toLowerCase() || "";
+      const isLikely = ua.includes("pibrowser") || document.referrer.includes("minepi.com");
+      
+      isInPiBrowser = isLikely;
+      return isLikely;
+    }
+
+    // Initialize app based on browser detection
+    async function initializeApp() {
+      const statusDiv = document.getElementById('status');
+      const isPiBrowser = await detectPiBrowser();
+      
+      if (!isPiBrowser) {
+        statusDiv.style.display = 'none';
+        document.getElementById('non-pi-warning').style.display = 'block';
+        return;
+      }
+
+      statusDiv.innerHTML = '<div class="success">✅ Pi Browser detected! You can now use all SDK features.</div>';
+      document.getElementById('pi-features').style.display = 'block';
+    }
+
+    // Initialize the app
+    initializeApp();
+
     // Example function
     const authenticate = () => {
+      if (!isInPiBrowser) {
+        alert('This feature requires Pi Browser');
+        return;
+      }
       Pi.authenticate(['payments'], (error, result) => {
         if (error) {
           console.error(error);
@@ -35,24 +107,40 @@
     };
 
     const checkUserHasMiningApp = () => {
+      if (!isInPiBrowser) {
+        alert('This feature requires Pi Browser');
+        return;
+      }
       Pi.checkUserHasMiningApp().then((result) => {
         console.log(result);
       });
     };
 
     const checkUserHasPiBrowser = () => {
+      if (!isInPiBrowser) {
+        alert('This feature requires Pi Browser');
+        return;
+      }
       Pi.checkUserHasPiBrowser().then((result) => {
         console.log(result);
       });
     };
 
     const copyText = () => {
+      if (!isInPiBrowser) {
+        alert('This feature requires Pi Browser');
+        return;
+      }
       Pi.copyText('Hello world!').then(() => {
         console.log('Text copied to clipboard.');
       });
     };
 
     const createPayment = () => {
+      if (!isInPiBrowser) {
+        alert('This feature requires Pi Browser');
+        return;
+      }
       Pi.createPayment({
         amount: 10,
         memo: 'This is a test payment.',
@@ -67,46 +155,78 @@
     };
 
     const getPiHostAppName = () => {
+      if (!isInPiBrowser) {
+        alert('This feature requires Pi Browser');
+        return;
+      }
       console.log(Pi.getPiHostAppName());
     };
 
     const getPiHostAppInfo = () => {
+      if (!isInPiBrowser) {
+        alert('This feature requires Pi Browser');
+        return;
+      }
       Pi.getPiHostAppInfo().then((result) => {
         console.log(result);
       });
     };
 
     const nativeFeaturesList = () => {
+      if (!isInPiBrowser) {
+        alert('This feature requires Pi Browser');
+        return;
+      }
       Pi.nativeFeaturesList().then((result) => {
         console.log(result);
       });
     };
 
     const openConversation = () => {
+      if (!isInPiBrowser) {
+        alert('This feature requires Pi Browser');
+        return;
+      }
       Pi.openConversation('my_conversation_id').then(() => {
         console.log('Conversation opened.');
       });
     };
 
     const openShareDialog = () => {
+      if (!isInPiBrowser) {
+        alert('This feature requires Pi Browser');
+        return;
+      }
       Pi.openShareDialog('My title', 'My sharing message').then(() => {
         console.log('Share dialog opened.');
       });
     };
 
     const openUrlInSystemBrowser = () => {
+      if (!isInPiBrowser) {
+        alert('This feature requires Pi Browser');
+        return;
+      }
       Pi.openUrlInSystemBrowser('https://www.minepi.com').then(() => {
         console.log('URL opened in system browser.');
       });
     };
 
     const requestPermission = () => {
+      if (!isInPiBrowser) {
+        alert('This feature requires Pi Browser');
+        return;
+      }
       Pi.requestPermission('camera').then((result) => {
         console.log(result);
       });
     };
 
     const scanQrCode = () => {
+      if (!isInPiBrowser) {
+        alert('This feature requires Pi Browser');
+        return;
+      }
       Pi.scanQrCode().then((result) => {
         console.log(result);
       });
