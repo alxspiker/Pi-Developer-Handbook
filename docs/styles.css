@@ -190,6 +190,22 @@ a:hover {
     text-shadow: none;
 }
 
+/* Outline buttons on white backgrounds (like community cards) */
+.community-card .btn-outline,
+.example-card .btn-outline {
+    background: transparent;
+    color: #7B2CBF;
+    border: 2px solid #7B2CBF;
+    text-shadow: none;
+}
+
+.community-card .btn-outline:hover,
+.example-card .btn-outline:hover {
+    background: #7B2CBF;
+    color: white;
+    text-shadow: none;
+}
+
 .btn-wiki {
     background: #28a745;
     color: white;
