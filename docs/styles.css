@@ -81,15 +81,19 @@ a:hover {
 .hero-subtitle {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
-    opacity: 0.9;
-    font-weight: 500;
+    opacity: 1;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-description {
     font-size: 1.5rem;
     margin-bottom: 2rem;
-    font-weight: 400;
-    opacity: 0.95;
+    font-weight: 500;
+    opacity: 1;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .badges {
@@ -104,26 +108,32 @@ a:hover {
     display: inline-flex;
     align-items: center;
     padding: 8px 16px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.4);
     border-radius: 50px;
     color: white;
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 600;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .badge:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.6);
     transform: translateY(-2px);
     color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .hero-tagline {
     font-size: 1.1rem;
     margin-bottom: 2.5rem;
-    opacity: 0.9;
+    opacity: 1;
     font-style: italic;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 500;
 }
 
 /* Buttons */
@@ -156,11 +166,14 @@ a:hover {
     background: transparent;
     color: white;
     border: 2px solid white;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .btn-secondary:hover {
     background: white;
     color: #7B2CBF;
+    text-shadow: none;
 }
 
 .btn-outline {
