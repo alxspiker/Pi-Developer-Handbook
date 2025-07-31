@@ -177,14 +177,17 @@ a:hover {
 }
 
 .btn-outline {
-    background: transparent;
-    color: #7B2CBF;
-    border: 2px solid #7B2CBF;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .btn-outline:hover {
-    background: #7B2CBF;
-    color: white;
+    background: white;
+    color: #7B2CBF;
+    text-shadow: none;
 }
 
 .btn-wiki {
@@ -552,8 +555,11 @@ section {
 .cta-tagline {
     font-size: 1.1rem;
     font-style: italic;
-    opacity: 0.9;
+    opacity: 1;
     margin-top: 1.5rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 500;
 }
 
 /* Footer */
